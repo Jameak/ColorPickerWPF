@@ -25,7 +25,7 @@ namespace ColorPickerWPF
         }
 
 
-        public static bool ShowDialog(out Color color, ColorPickerDialogOptions flags = ColorPickerDialogOptions.None, string customPaletteName = null, ColorPickerControl.ColorPickerChangeHandler customPreviewEventHandler = null)
+        public static bool ShowDialog(out Color color, ColorPickerDialogOptions flags = ColorPickerDialogOptions.None, string customPaletteName = null, Color? startColor = null, ColorPickerControl.ColorPickerChangeHandler customPreviewEventHandler = null)
         {
             var instance = new ColorPickerWindow();
             color = instance.ColorPicker.Color;
@@ -48,6 +48,15 @@ namespace ColorPickerWPF
                 }
             }
 
+            if (startColor.HasValue)
+            {
+                instance.ColorPicker.SetColor(startColor.Value);
+            }
+            else
+            {
+                instance.ColorPicker.SetColor(Colors.White);
+            }
+            
             if (customPreviewEventHandler != null)
             {
                 instance.ColorPicker.OnPickColor += customPreviewEventHandler;
