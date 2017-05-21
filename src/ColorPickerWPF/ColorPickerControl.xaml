@@ -73,6 +73,11 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
+                <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"  Width="54" Height="54">
+                    <Rectangle.Fill>
+                        <ImageBrush TileMode="Tile" Viewport="0,0,16,16" ViewportUnits="Absolute" ImageSource="/ColorPickerWPF;component/Resources/TransparencyTile.bmp"/>
+                    </Rectangle.Fill>
+                </Rectangle>
                 <Border x:Name="ColorDisplayBorder" HorizontalAlignment="Left" VerticalAlignment="Top" 
                     BorderBrush="Black" Background="White" BorderThickness="2"  Width="58" Height="58" Margin="0,0,0,0"/>
 

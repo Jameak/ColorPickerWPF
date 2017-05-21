@@ -132,6 +132,9 @@
   <ItemGroup>
     <Resource Include="Resources\colorpicker1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TransparencyTile.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>..\nuget\nuget.exe pack ..\src\ColorPickerWPF\ColorPickerWPF.csproj
